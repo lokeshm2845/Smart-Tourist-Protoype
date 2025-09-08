@@ -6,6 +6,6 @@ export function generateDigitalID(userName) {
     id: uuidv4(),
     name: userName,
     timestamp: new Date().toISOString(),
-    signature: Math.random().toString(36).substring(2, 15),
+    signature: Math.random().toString(36).substring(2,15),
   };
 }
