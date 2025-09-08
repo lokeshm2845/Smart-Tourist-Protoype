@@ -37,3 +37,34 @@ firebase deploy --only functions
 cd dashboard
 npm install
 npm start
+
+
+
+
+
+
+
+
+npm install firebase
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDg3H4a6zBKI8snTNJjmTs8RDiY4jGhvH8",
+  authDomain: "smart-tourist-fb915.firebaseapp.com",
+  projectId: "smart-tourist-fb915",
+  storageBucket: "smart-tourist-fb915.firebasestorage.app",
+  messagingSenderId: "814981480733",
+  appId: "1:814981480733:web:b8fdb70e0a9770a130e1f4",
+  measurementId: "G-LZYTSKJ9L1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
