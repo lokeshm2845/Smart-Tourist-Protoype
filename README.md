@@ -68,3 +68,44 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+
+
+
+# Smart Tourist Final Prototype
+
+This repo contains a runnable prototype with Firestore integration.
+
+## Folders
+- mobile: Expo React Native app
+- functions: Firebase cloud functions (writes incidents)
+- dashboard: React dashboard showing incidents
+
+## Setup
+
+1. Create a Firebase project and enable Firestore and Functions.
+2. Obtain Firebase config for Web and React Native apps (apiKey, projectId, ...).
+
+### Mobile
+cd mobile
+npm install
+# Edit App.js and replace firebaseConfig with your project's config
+expo start
+
+### Functions
+cd functions
+npm install
+# deploy functions with:
+firebase deploy --only functions
+
+### Dashboard
+cd dashboard
+npm install
+# Edit dashboard/App.js firebaseConfig, then:
+npm start
+
+## Notes
+- Replace all `REPLACE_ME` placeholders in firebaseConfig with your Firebase project's credentials.
+- Mobile app writes incidents to Firestore collection 'incidents'.
+- Functions provide a callable endpoint to write incidents (useful for other integrations).
+
