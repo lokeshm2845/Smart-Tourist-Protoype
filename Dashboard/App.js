@@ -1,18 +1,20 @@
+// dashboard/App.js
 import React, { useState } from 'react';
 
 function App() {
   const [alerts, setAlerts] = useState([]);
 
   const simulateAlert = () => {
-    setAlerts([...alerts, { msg: "Tourist SOS at Location X", time: new Date().toLocaleTimeString() }]);
+    const newAlert = { id: Date.now(), msg: "🚨 SOS Alert received!" };
+    setAlerts([newAlert, ...alerts]);
   };
 
   return (
-    <div style={{padding:"20px"}}>
-      <h2>Tourist Incident Dashboard</h2>
-      <button onClick={simulateAlert}>Simulate Incoming Alert</button>
+    <div style={{ padding: 20 }}>
+      <h1>Tourist Incident Dashboard</h1>
+      <button onClick={simulateAlert}>Simulate Alert</button>
       <ul>
-        {alerts.map((a, i) => <li key={i}>{a.time}: {a.msg}</li>)}
+        {alerts.map(a => <li key={a.id}>{a.msg}</li>)}
       </ul>
     </div>
   );
