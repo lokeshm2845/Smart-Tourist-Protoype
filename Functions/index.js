@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
-import { View, Text, Button, Alert } from 'react-native';
+// functions/index.js
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+admin.initializeApp();
 
-export default function App() {
-  const [inside, setInside] = useState(false);
+// Log alerts to Firebase
+exports.sendAlert = functions.https.onCall(async (data, context) => {
+  console.log("🚨 Alert received:", data);
+  return { success: true };
+});
 
-  const toggleGeoFence = () => {
-    setInside(!inside);
-    Alert.alert(inside ? "Exited Zone" : "Entered Zone");
+// Future: Push Notifications
+/*
+exports.sendSOS = functions.https.onCall(async (data, context) => {
+  const message = {
+    notification: {
+      title: "🚨 SOS Alert!",
+      body: `Tourist at ${data.location} needs help!`,
+    },
+    token: data.deviceToken,
   };
-
-  return (
-    <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
-      <Text>Smart Tourist App</Text>
-      <Button title="Simulate GeoFence" onPress={toggleGeoFence} />
-      <Button title="Send SOS" onPress={() => Alert.alert("SOS Sent")} />
-    </View>
-  );
-}
+  await admin.messaging().send(message);
+  return { success: true };
+});
+*/
