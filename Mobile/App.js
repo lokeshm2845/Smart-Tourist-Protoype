@@ -17,3 +17,16 @@ export default function App() {
     </View>
   );
 }
+
+import { generateDigitalID } from './blockchainID';
+
+const [digitalID, setDigitalID] = useState(null);
+
+<Button 
+  title="Generate Digital ID" 
+  onPress={() => setDigitalID(generateDigitalID("John Doe"))} 
+/>
+
+{digitalID && (
+  <Text>Digital ID: {digitalID.id}</Text>
+)}
