@@ -14,7 +14,7 @@ smart-tourist-prototype/
 └── README.md        # Setup guide (this file)
 
 
-git clone https://github.com/YOUR_USERNAME/smart-tourist-prototype.git
+git clone https://github.com/lokeshm2845/smart-tourist-prototype.git
 cd smart-tourist-prototype
 
 
@@ -37,43 +37,3 @@ firebase deploy --only functions
 cd dashboard
 npm install
 npm start
-
-
-
-
-
-
-
-# Smart Tourist Prototype
-
-## Structure
-- `mobile/` : Expo React Native app (Tourist App)
-- `functions/` : Firebase Cloud Functions backend
-- `dashboard/` : React Web Dashboard for monitoring
-- `README.md` : Setup + Instructions
-
-## Quick Start
-
-### Mobile App
-```bash
-cd mobile
-npm install
-npm start
-```
-
-### Firebase Functions
-```bash
-cd functions
-npm install
-firebase deploy --only functions
-```
-
-### Dashboard
-```bash
-cd dashboard
-npm install
-npm start
-```
-
----
-This is a **prototype** meant for demo purposes.
