@@ -1,1 +1,22 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [alerts, setAlerts] = useState([]);
+
+  const simulateAlert = () => {
+    setAlerts([...alerts, { msg: "Tourist SOS at Location X", time: new Date().toLocaleTimeString() }]);
+  };
+
+  return (
+    <div style={{padding:"20px"}}>
+      <h2>Tourist Incident Dashboard</h2>
+      <button onClick={simulateAlert}>Simulate Incoming Alert</button>
+      <ul>
+        {alerts.map((a, i) => <li key={i}>{a.time}: {a.msg}</li>)}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
 
